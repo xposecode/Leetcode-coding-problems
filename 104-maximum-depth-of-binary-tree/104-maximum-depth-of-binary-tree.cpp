@@ -21,7 +21,6 @@ public:
         else{
                 return (r+1);
         }
-        // return(l>r?(l+1):(r+1));
     }
 };
 
