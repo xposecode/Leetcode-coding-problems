@@ -4,8 +4,6 @@ public:
         
             unordered_map<int,int>mp;
             int n=nums.size();
-            
-            vector<int>sk;
             for(int i=0;i<n;i++)
             {
                     mp[nums[i]]++;
