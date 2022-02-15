@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        
+            unordered_map<int,int>mp;
+            int n=nums.size();
+            
+            vector<int>sk;
+            for(int i=0;i<n;i++)
+            {
+                    mp[nums[i]]++;
+            }
+            
+            for(auto i : mp){
+            if(i.second == 1) return i.first;
+            }
+        return -1;
+    }
+};
