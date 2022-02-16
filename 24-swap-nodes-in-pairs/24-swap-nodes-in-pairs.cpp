@@ -12,15 +12,23 @@ class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {
         
-             if ((!head) || (!head->next))
-        return head;
+//              if ((!head) || (!head->next))
+//         return head;
     
-    struct ListNode* tmp = head;
-    head = head->next;
-    tmp->next = head->next;
-    head->next = tmp;
+//     struct ListNode* tmp = head;
+//     head = head->next;
+//     tmp->next = head->next;
+//     head->next = tmp;
     
-    head->next->next = swapPairs(head->next->next);
-    return head;
+//     head->next->next = swapPairs(head->next->next);
+//     return head;
+            
+            if(!head || !head->next) return head;
+        ListNode* temp;
+        temp = head->next;
+        head->next = swapPairs(head->next->next);
+        temp->next = head;
+        
+        return temp;
     }
 };
