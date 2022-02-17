@@ -14,13 +14,10 @@ class Solution {
         bool x=true;
         for(int i=0;i<n;i++)
         {
-            // for(int j=i+1;j<n;j++)
-            // {
                 if(a[i]+b[i]<k)
                 {
                     x=false;
                 }
-            // }
         }
         return x;
     }
