@@ -3,10 +3,10 @@ public:
     string removeKdigits(string num, int k) {
         
             
-            // number of operation greater than length we return an empty string
-            if(num.size()<=k) return "0";
+         // number of operation greater than length we return an empty string
+        if(num.size()<=k)  return "0";
             
-            // k is 0 , no need of removing /  preforming any operation
+        // k is 0 , no need of removing /  preforming any operation
         if(k == 0)
             return num;
         
