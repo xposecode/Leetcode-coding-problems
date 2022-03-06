@@ -33,6 +33,8 @@ Space complexity: O(n)
            */
             
             //Using the XOR:
+            //Time complexity: O(n)
+            //Space complexity: O(1)
             int n=arr.size();
             int ans=0;
             for(int i=0;i<n;i++)
