@@ -34,36 +34,39 @@ class Solution
             }
             return ans;
             */
+                
+        // Time Complexity: O(n)        
+        
            	// initialize output
             int result = 0;
 
            	// maximum element on left and right
-            int left_max = 0, right_max = 0;
+            int left = 0, right = 0;
 
             int n = arr.size();
            	// indices to traverse the array
-            int lo = 0, hi = n - 1;
+            int start = 0, end = n - 1;
 
-            while (lo <= hi)
+            while (start <= end)
             {
-                if (arr[lo] < arr[hi])
+                if (arr[start] < arr[end])
                 {
-                    if (arr[lo] > left_max)
+                    if (arr[start] > left)
                        	// update max in left
-                        left_max = arr[lo];
+                        left = arr[start];
                     else
                        	// water on curr element = max - curr
-                        result += left_max - arr[lo];
-                    lo++;
+                        result += left - arr[start];
+                    start++;
                 }
                 else
                 {
-                    if (arr[hi] > right_max)
+                    if (arr[end] > right)
                        	// update right maximum
-                        right_max = arr[hi];
+                        right = arr[end];
                     else
-                        result += right_max - arr[hi];
-                    hi--;
+                        result += right - arr[end];
+                    end--;
                 }
             }
 
