@@ -13,13 +13,13 @@ public:
     int remove_duplicate(int arr[],long long n){
         // code here
         int j=0;
-       for(int i=0;i<n;i++)
+       for(int i=0;i<n;i++)  //traversing the array
        {
-           if(arr[j]==arr[i])
+           if(arr[j]==arr[i]) //checking if the elements is equal
            {
                continue;
            }
-           else{
+           else{              
                j++;
                arr[j]=arr[i];
            }
