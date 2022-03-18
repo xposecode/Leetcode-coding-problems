@@ -10,7 +10,7 @@ public:
     {
         // Code here.
         
-        unordered_map<int,int>map;
+        map<int,int>map;
         
         int n=arr.size();
         vector<int>v;
@@ -19,14 +19,19 @@ public:
             map[arr[i]]++;
         }
         
-        for(int i=0;i<n;i++)
+        // for(int i=0;i<n;i++)
+        // {
+        //     if(map[arr[i]]==1)
+        //     {
+        //         v.push_back(arr[i]);
+        //     }
+        // }
+         for(auto it:map)
         {
-            if(map[arr[i]]==1)
-            {
-                v.push_back(arr[i]);
-            }
+            if(it.second==1)
+            v.push_back(it.first);
         }
-        sort(v.begin(),v.end());
+        // sort(v.begin(),v.end());
         return v;
     }
 };
