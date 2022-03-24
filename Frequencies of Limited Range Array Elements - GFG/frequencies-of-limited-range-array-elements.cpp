@@ -10,7 +10,7 @@ class Solution{
     { 
         // code here
         map<int,int>map;
-        map.clear();
+        // map.clear();
         for(int i=0;i<n;i++)
         {
             map[arr[i]]++;
