@@ -13,24 +13,24 @@ class Solution {
     // the intersection of two arrays.
     int NumberofElementsInIntersection(int a[], int b[], int n, int m) {
         // Your code goes here
-    set<int>map;
-    int count=0;
+    set<int>map;      // Creating the set
+    int count=0;      // Intializing the count with 0
     
     for(int i=0;i<n;i++)
     {
         // map[a[i]]++;
-        map.insert(a[i]);
+        map.insert(a[i]);    //Inserting the elements in the set
     }
     
     for(int i=0;i<m;i++)
     {
-        if(map.find(b[i])!=map.end())
+        if(map.find(b[i])!=map.end())   //finding in the other array=b
         {
-            count++;
+            count++;                 //Incrementing the count every time if found
         }
-        map.erase(b[i]);
+        map.erase(b[i]);            //then erasing to avoid the overlapping
     }
-    return count;
+    return count;                 //Returning the count
     }
 };
 
