@@ -15,50 +15,29 @@ class Solution{
     bool findTriplets(int arr[], int n)
     { 
         //Your code here
-        // sort(arr,arr+n);    //-3 -1  0  1  2
+        sort(arr,arr+n);    //-3 -1  0  1  2
         
-        // for(int i=0;i<n;i++)
-        // {
-        //     int left=i+1;   
-        //     int right=n-1;
+        for(int i=0;i<n;i++)
+        {
+            int left=i+1;   
+            int right=n-1;
             
-        //     while(left<right)
-        //     {
-        //         if(arr[i]+arr[left]+arr[right]==0)
-        //         {
-        //             return true;
-        //         }
-        //         else if(arr[i]+arr[left]+arr[right]>0)
-        //         {
-        //             right--;
-        //         }
-        //         else{
-        //             left++;
-        //         }
-        //     }
-        //     return false;
-        // }
-        sort(arr, arr+n);
-       
-       for(int i = 0; i < n; i++)
-       {
-           int left = i+1;
-           int right = n-1;
-           
-           while(left < right)
-           {
-               if(arr[i] + arr[left] + arr[right] == 0)
-               {
-                   return true;
-               }    
-               else if(arr[i] + arr[left] + arr[right] > 0)
-                   right--;
-               else
-                   left++;
-           }
-       }
-       return false;
-   
+            while(left<right)
+            {
+                if(arr[i]+arr[left]+arr[right]==0)
+                {
+                    return true;
+                }
+                else if(arr[i]+arr[left]+arr[right]>0)
+                {
+                    right--;
+                }
+                else{
+                    left++;
+                }
+            }
+        }
+        return false;
     }
 };
 
