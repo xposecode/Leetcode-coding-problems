@@ -31,11 +31,6 @@ class Solution
                 return false;
             }
 
-            if (OddCount(s) <= k)
-            {
-
-                return true;
-            }    
-        return false;
+            return OddCount(s) <= k;
         }
 };
