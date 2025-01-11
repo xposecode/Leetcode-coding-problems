@@ -8,7 +8,7 @@ public:
             bitmask ^= (1 << (c - 'a'));
         }
 
-        int oddCount = __builtin_popcount(bitmask);
+        int oddCount = __builtin_popcount(bitmask); //will count number of time 1 bit appears(odd number of times)
         return oddCount <= k;
     }
 };
