@@ -1,31 +1,21 @@
-class Solution
-{
+class Solution {
 public:
-    bool canConstruct(string s, int k)
-    {
-        // If k is greater than the length of the string, we can't create k palindromes
-        if (k > s.size())
-            return false;
+    bool canConstruct(string s, int k) {
+        if (s.length() < k) return false;
 
-        // Count the frequency of each character in the string
-        unordered_map<char, int> charCount;
-        for (char c : s)
-        {
-            charCount[c]++;
-        }
-
-        // Count the number of characters with odd frequencies
+        sort(s.begin(), s.end());
         int oddCount = 0;
-        for (const auto& pair : charCount)
-        {
-            if (pair.second % 2 != 0)
-            {
-                oddCount++;
+
+        for (int i = 0; i < s.length(); ) {
+            char current = s[i];
+            int count = 0;
+            while (i < s.length() && s[i] == current) {
+                count++;
+                i++;
             }
+            if (count % 2 != 0) oddCount++;
         }
 
-        // To form k palindromes, we need at least `oddCount` palindromes (one for each odd character count)
-        // If `oddCount` is less than or equal to k, we can construct k palindromes
         return oddCount <= k;
     }
 };
