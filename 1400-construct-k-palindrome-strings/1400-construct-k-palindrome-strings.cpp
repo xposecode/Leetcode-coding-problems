@@ -31,7 +31,7 @@ class Solution
                 return false;
             }
 
-            else if (OddCount(s) <= k)
+            if (OddCount(s) <= k)
             {
 
                 return true;
