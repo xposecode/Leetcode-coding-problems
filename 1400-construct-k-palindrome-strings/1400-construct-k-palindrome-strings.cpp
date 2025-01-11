@@ -1,14 +1,21 @@
+#include <unordered_map>
+using namespace std;
+
 class Solution {
 public:
     bool canConstruct(string s, int k) {
         if (s.length() < k) return false;
 
-        int bitmask = 0;
+        unordered_map<char, int> charCount;
         for (char c : s) {
-            bitmask ^= (1 << (c - 'a'));
+            charCount[c]++;
         }
 
-        int oddCount = __builtin_popcount(bitmask);
+        int oddCount = 0;
+        for (auto& entry : charCount) {
+            if (entry.second % 2 != 0) oddCount++;
+        }
+
         return oddCount <= k;
     }
 };
